@@ -22,5 +22,5 @@
     "RMSE": 4.767179459596628
   },
   "ground_truth_policy": "Ground truth is stored separately in data/ground_truth and is used only for evaluation, not as a model feature.",
-  "created_utc": "2026-10-30T04:20:12.631710+00:00"
+  "created_utc": "2026-10-30T05:09:53.468948+00:00"
 }
