@@ -283,13 +283,6 @@ A project report can accompany this repository as a PDF. It should be
 kept consistent with the implementation and should clearly state that
 the datasets and forecast evaluation ground truth are synthetic.
 
-## License
-
-No license is specified in this README. Add a `LICENSE` file before
-publishing if you want to grant others explicit permission to use,
-modify, and distribute the project. Choose a license that fits your
-goals.
-
 ## Acknowledgement
 
 This project demonstrates an end-to-end prototype for academic course
