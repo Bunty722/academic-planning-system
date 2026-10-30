@@ -1,0 +1,26 @@
+{
+  "project": "Academic Course Demand Forecasting and Faculty Allocation System",
+  "seed": 20261022,
+  "counts": {
+    "programs": 100,
+    "courses": 1000,
+    "faculty": 500,
+    "student_plans": 20000,
+    "forecasts": 1000,
+    "sections": 1327,
+    "allocations": 1327,
+    "assigned_sections": 1187,
+    "unassigned_sections": 140,
+    "exceptions": 140
+  },
+  "forecast_metrics": {
+    "model": "RandomForestRegressor",
+    "seed": 20261022,
+    "evaluation": "synthetic future ground truth; ground truth excluded from model features",
+    "n_courses": 1000,
+    "MAE": 3.902,
+    "RMSE": 4.767179459596628
+  },
+  "ground_truth_policy": "Ground truth is stored separately in data/ground_truth and is used only for evaluation, not as a model feature.",
+  "created_utc": "2026-10-30T04:20:12.631710+00:00"
+}

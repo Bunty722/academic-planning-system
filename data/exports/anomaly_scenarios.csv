@@ -1,0 +1,6 @@
+scenario_id,scenario,test_input,expected_detection,detected,observed_detection
+ANOM-001,FACULTY_OUTSIDE_SKILL_SET,faculty assigned to course absent from faculty_skills,SKILL_MISMATCH,True,SKILL_MISMATCH
+ANOM-002,WORKLOAD_EXCEEDED,current load 12 plus assignment 4 exceeds maximum 14,WORKLOAD_LIMIT_EXCEEDED,True,WORKLOAD_LIMIT_EXCEEDED
+ANOM-003,SECTION_CAPACITY_TOO_LOW,capacity 25 is below demand 30,CAPACITY_BELOW_DEMAND,True,CAPACITY_BELOW_DEMAND
+ANOM-004,PREREQUISITE_ORDER_VIOLATION,course scheduled in slot 2 before prerequisite in slot 5,PREREQUISITE_ORDER_VIOLATION,True,PREREQUISITE_ORDER_VIOLATION
+ANOM-005,DUPLICATE_SECTION_ASSIGNMENT,two allocation rows use the same section identifier,DUPLICATE_SECTION_ASSIGNMENT,True,DUPLICATE_SECTION_ASSIGNMENT

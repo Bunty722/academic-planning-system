@@ -1,0 +1,6 @@
+{
+  "seed": 20261022,
+  "target_term": "2027-SPRING",
+  "section_capacity_default": 40,
+  "faculty_workload_constraint": "weekly_load <= max_weekly_load"
+}

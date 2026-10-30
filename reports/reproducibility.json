@@ -1,0 +1,5 @@
+{
+  "seed": 20261022,
+  "data_and_forecast_sha256": "e92cccf4886b52ecd8e147ef86d443525a19f4d6f6336baecf0dee450ce4c2f7",
+  "note": "Repeat with same seed and dependency versions to verify deterministic source data and forecasts."
+}

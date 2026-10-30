@@ -1,0 +1,8 @@
+{
+  "model": "RandomForestRegressor",
+  "seed": 20261022,
+  "evaluation": "synthetic future ground truth; ground truth excluded from model features",
+  "n_courses": 1000,
+  "MAE": 3.902,
+  "RMSE": 4.767179459596628
+}

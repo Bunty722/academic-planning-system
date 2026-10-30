@@ -1,0 +1,13 @@
+PRAGMA foreign_keys = ON;
+CREATE TABLE IF NOT EXISTS programs(program_id TEXT PRIMARY KEY, program_name TEXT, department TEXT, annual_intake INTEGER);
+CREATE TABLE IF NOT EXISTS courses(course_id TEXT PRIMARY KEY, program_id TEXT NOT NULL, course_name TEXT, credits INTEGER, capacity_target INTEGER, level INTEGER, prerequisite_course_id TEXT, FOREIGN KEY(program_id) REFERENCES programs(program_id), FOREIGN KEY(prerequisite_course_id) REFERENCES courses(course_id));
+CREATE TABLE IF NOT EXISTS faculty(faculty_id TEXT PRIMARY KEY, faculty_name TEXT, max_weekly_load INTEGER, available INTEGER);
+CREATE TABLE IF NOT EXISTS faculty_skills(faculty_id TEXT, course_id TEXT, proficiency TEXT, PRIMARY KEY(faculty_id,course_id), FOREIGN KEY(faculty_id) REFERENCES faculty(faculty_id), FOREIGN KEY(course_id) REFERENCES courses(course_id));
+CREATE TABLE IF NOT EXISTS student_plans(student_plan_id TEXT PRIMARY KEY, student_id TEXT, program_id TEXT, academic_term TEXT, planned_course_id TEXT, plan_status TEXT, FOREIGN KEY(program_id) REFERENCES programs(program_id), FOREIGN KEY(planned_course_id) REFERENCES courses(course_id));
+CREATE TABLE IF NOT EXISTS rooms(room_id TEXT PRIMARY KEY, capacity INTEGER, room_type TEXT);
+CREATE TABLE IF NOT EXISTS historical_demand(course_id TEXT, term_index INTEGER, term TEXT, enrollment INTEGER, PRIMARY KEY(course_id,term_index), FOREIGN KEY(course_id) REFERENCES courses(course_id));
+CREATE TABLE IF NOT EXISTS forecasts(course_id TEXT, target_term TEXT, forecast_demand INTEGER, FOREIGN KEY(course_id) REFERENCES courses(course_id));
+CREATE TABLE IF NOT EXISTS proposed_sections(section_id TEXT PRIMARY KEY, course_id TEXT, term TEXT, section_number INTEGER, forecast_demand INTEGER, capacity INTEGER, time_slot TEXT, room_id TEXT, prerequisite_course_id TEXT);
+CREATE TABLE IF NOT EXISTS workload_allocations(workload_allocation_id TEXT PRIMARY KEY, section_id TEXT, faculty_id TEXT, course_id TEXT, weekly_load INTEGER, status TEXT);
+CREATE TABLE IF NOT EXISTS exceptions(exception_id INTEGER PRIMARY KEY, scenario TEXT, entity_id TEXT, severity TEXT, detail TEXT, status TEXT);
+CREATE TABLE IF NOT EXISTS audit_events(event_id INTEGER PRIMARY KEY, entity_type TEXT, entity_id TEXT, event_type TEXT, detail TEXT);
